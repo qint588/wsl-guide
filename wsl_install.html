@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Install WSL</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><img src="file:////Users/quocbinh/Sites/ye-t/penkar/image-4.png" alt="alt text"></p>
+<h2 id="install-wsl">Install WSL</h2>
+<p>Run this command</p>
+<pre><code>wsl.exe --install --d Ubuntu-22.04
+</code></pre>
+<blockquote>
+<p>NOTE: In the New password and Retype new password sections, when you type, the characters will not be displayed, but don't worry, they are only hidden when you type.</p>
+</blockquote>
+<p>Show all versions you have in your device:</p>
+<pre><code>wsl -l -v
+</code></pre>
+<p><img src="file:////Users/quocbinh/Sites/ye-t/penkar/image-3.png" alt="alt text"></p>
+<p>To remove the distribution, use the command</p>
+<pre><code>wsl --unregister Ubuntu-22.04
+</code></pre>
+<p>The current default WLS distro is labeled (Default). To set a new default WSL distro, execute the command:</p>
+<pre><code>wsl --setdefault Ubuntu-22.04
+</code></pre>
+<p><img src="file:////Users/quocbinh/Sites/ye-t/penkar/image-2.png" alt="alt text"></p>
+<p>Finally, try this command</p>
+<pre><code>wsl
+</code></pre>
+<p>The system will login to <code>wsl</code>, please fill password have been created</p>
+<h2 id="install-source-to-wsl">Install source to WSL</h2>
+<p>Create workspace follow if it's not exists, use the command:</p>
+<pre><code>mdkir workspace
+</code></pre>
+<p>Copy source to wsl: use the command</p>
+<pre><code>cd ~/workspace &amp;&amp; cp -R /mnt/&lt;project_folder&gt; &lt;project_name_in_wsl&gt; 
+</code></pre>
+<p>Please change</p>
+<ul>
+<li><code>&lt;project_folder&gt;</code> to your project path Ex: <code>/d/workspace/penkar </code></li>
+<li><code>&lt;project_name_in_wsl&gt;</code> to your project name Ex: <code>penkar</code></li>
+</ul>
+<p>Reset permissions for the project, use the command:</p>
+<pre><code>cd ~/workspace/&lt;project_name_in_wsl&gt; &amp;&amp; chown -R &lt;your_wsl_name&gt;: .
+</code></pre>
+<p>Please change</p>
+<ul>
+<li><code>&lt;project_name_in_wsl&gt;</code> to your project name Ex: <code>penkar</code></li>
+<li><code>&lt;your_wsl_name&gt;</code> to your wsl username Ex: <code>y018</code></li>
+</ul>
+<p>To view username in wsl, use this command:</p>
+<pre><code>whoami
+</code></pre>
+<p><img src="file:////Users/quocbinh/Sites/ye-t/penkar/image-1.png" alt="alt text"></p>
+<h2 id="install-docker-to-wsl">Install docker to WSL</h2>
+<p>Please follow this link <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#install-docker-desktop">https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers </a></p>
+<p><img src="file:////Users/quocbinh/Sites/ye-t/penkar/image.png" alt="alt text"></p>
+<p>After setup please try:</p>
+<ul>
+<li>
+<p>To confirm that Docker has been installed, open a WSL distribution (e.g. Ubuntu) and display the version and build number by entering: <code>docker --version</code></p>
+</li>
+<li>
+<p>Test that your installation works correctly by running a simple built-in Docker image using: <code>docker run hello-world</code></p>
+</li>
+</ul>
+
+            
+            
+        </body>
+        </html>
