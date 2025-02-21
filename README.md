@@ -50,7 +50,7 @@ Reset permissions for the project, use the command:
 cd ~/workspace/<project_name_in_wsl> && chown -R <your_wsl_name>: .
 ```
 Please change
-- `<project_name_in_wsl>` to your project name Ex: `penkar`
+- `<project_name_in_wsl>` to your project name Ex: `my_project`
 - `<your_wsl_name>` to your wsl username Ex: `ubuntu_user`
 
 To view username in wsl, use this command:
